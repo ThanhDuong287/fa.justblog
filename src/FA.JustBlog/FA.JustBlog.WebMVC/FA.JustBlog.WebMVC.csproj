@@ -338,6 +338,8 @@
     <Content Include="Views\Post\Details.cshtml" />
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Home\_Menu.cshtml" />
+    <Content Include="Views\Tag\Details.cshtml" />
+    <Content Include="Views\Post\_MostViewPosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

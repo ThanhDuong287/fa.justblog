@@ -2,10 +2,13 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<link href="~/Style/Style.css" rel="stylesheet" type="text/css" />
 @foreach (var item in Model)
 {
     <span class="badge badge-info">
-        <div>@item.Name</div>
+        <a href="@Url.Action("Details", "Tag", new { id = item.Id})">
+            @item.Name
+        </a>
     </span>
 }
 

@@ -79,10 +79,10 @@ namespace FA.JustBlog.WebMVC.Areas.Admin.Controllers
                     orderBy = q => q.OrderByDescending(c => c.Published);
                     break;
                 case "PublishedDate":
-                    orderBy = q => q.OrderBy(c => c.Published);
+                    orderBy = q => q.OrderBy(c => c.PublishedDate);
                     break;
                 case "publisheddate_desc":
-                    orderBy = q => q.OrderByDescending(c => c.Published);
+                    orderBy = q => q.OrderByDescending(c => c.PublishedDate);
                     break;
                 case "UpdatedAt":
                     orderBy = q => q.OrderBy(c => c.UpdatedAt);
@@ -158,6 +158,7 @@ namespace FA.JustBlog.WebMVC.Areas.Admin.Controllers
                 PostContent = p.PostContent,
                 Published = p.Published,
                 CategoryId = p.CategoryId,
+                SelectedTagIds = p.Tags.Select(k=>k.Id)
             };
             ViewBag.Categories = new SelectList(_categoryServices.GetAll(), "Id", "Name", postViewModel.CategoryId);
             postViewModel.Tags = _tagServices.GetAll().Select(t => new SelectListItem { Value = t.Id.ToString(), Text = t.Name });
@@ -240,7 +241,7 @@ namespace FA.JustBlog.WebMVC.Areas.Admin.Controllers
             var result = false;
             if (post != null)
             {
-                result = _categoryServices.Delete(post.Id);
+                result = _postServices.Delete(post.Id);
             }
 
             if (result)

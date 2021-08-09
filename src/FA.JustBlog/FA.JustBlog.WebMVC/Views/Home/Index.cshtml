@@ -3,11 +3,6 @@
     ViewBag.Title = "Home Page";
 }
 
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 @foreach (var item in Model)
 {
@@ -47,22 +42,3 @@
     </ul>
 </nav>
 
-@*@foreach (var item in Model)
-    {
-        <div class="item">
-            <div class="post_s_item">
-                <div class="post_img">
-                    <img src="../asset/images/@item.ImageUrl" alt="@item.ImageUrl">
-                </div>
-                <div class="post_text">
-                    <a class="cat" href="#">@item.Category.Name</a>
-                    <a href="single-blog.html"><h4>@item.Title</h4></a>
-                    <p>@item.ShortDescription</p>
-                    <div class="date">
-                        <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> @item.PublishedDate</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }*@
